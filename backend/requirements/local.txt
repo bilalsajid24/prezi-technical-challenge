@@ -1,0 +1,27 @@
+-r ./base.txt
+
+Werkzeug==2.2.2
+ipdb==0.13.11
+
+# Testing
+mock==4.0.3
+pytest==7.2.0
+pytest-sugar==0.9.6
+pytest-repeat==0.9.1
+django_capture_on_commit_callbacks==1.11.0
+
+# Code quality
+flake8==4.0.1
+isort==5.11.4
+flake8-isort==6.0.0
+coverage==7.0.1
+autopep8==1.6.0
+pytest-flake8==1.1.1
+pytest-isort==3.1.0
+
+# Django
+factory-boy==3.2.1
+django-debug-toolbar==3.8.1
+django-extensions==3.2.1
+django-coverage-plugin==3.0.0
+pytest-django==4.5.2

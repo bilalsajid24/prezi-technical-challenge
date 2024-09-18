@@ -1,0 +1,23 @@
+argon2-cffi==21.3.0
+celery==5.2.7
+click==8.1.3
+hiredis==2.1.0
+kaleido==0.2.1
+Pillow==9.3.0
+psutil==5.9.4
+psycopg2-binary==2.9.5
+python-slugify==7.0.0
+pytz==2022.7
+redis==4.4.0
+uritemplate==4.1.1
+PyYAML==6.0.1
+
+# Django
+django==4.1.4
+django-environ==0.9.0
+django-model-utils==4.3.1
+django-request-logging==0.7.5
+django-filter==2.4.0
+
+# Django REST Framework
+djangorestframework==3.14.0

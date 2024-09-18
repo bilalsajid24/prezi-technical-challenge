@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  presentations_backend:
+    build:
+      context: ..
+      dockerfile: docker/local/django/Dockerfile
+    image: presentations_backend
+    container_name: presentations_backend
+    depends_on:
+      - presentations_database
+    volumes:
+      - ..:/app
+    env_file:
+      - local/.envs/.server
+      - local/.envs/.postgres
+    ports:
+      - "8989:8989"
+    command: /start
+    stdin_open: true
+
+  presentations_database:
+    image: postgres:12.9-alpine
+    restart: always
+    container_name: presentations_database
+    expose:
+      - 5151
+    ports:
+      - "5151:5151"
+    volumes:
+      - presentations_database_data:/var/lib/postgresql/data
+      - presentations_database_data_backups:/backups
+    env_file:
+      - local/.envs/.postgres
+    command: -p 5151
+    healthcheck:
+      test: pg_isready --dbname=$$POSTGRES_DB --user=$$POSTGRES_USER --port=5151
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  presentations_database_data: {}
+  presentations_database_data_backups: {}
