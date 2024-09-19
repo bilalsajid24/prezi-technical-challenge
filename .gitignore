@@ -12,7 +12,7 @@ outfile
 *.yml-e
 prospector.txt
 
-backend/server/static/
+backend/static/
 
 
 ## security
