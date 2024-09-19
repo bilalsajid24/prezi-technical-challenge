@@ -22,13 +22,13 @@ jobs:
           touch .server
           touch .postgres
           
-          echo "DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }}" >> .server
           echo "USE_DOCKER=yes" >> .server
           echo "DJANGO_SECRET_KEY=" >> .server
+          echo "DATABASE_URL=postgres://root:password@presentations_test_database:5151/presentations_tests" >> .server
           
-          echo "POSTGRES_HOST=presentations_database" >> .postgres
+          echo "POSTGRES_HOST=presentations_test_database" >> .postgres
           echo "POSTGRES_PORT=5151" >> .postgres
-          echo "POSTGRES_DB=presentations" >> .postgres
+          echo "POSTGRES_DB=presentations_tests" >> .postgres
           echo "POSTGRES_USER=root" >> .postgres
           echo "POSTGRES_PASSWORD=password" >> .postgres
 
