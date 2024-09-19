@@ -11,6 +11,8 @@ RUN apt-get update -y && apt-get install -y \
     python3-dev \
     postgresql-client
 
+COPY ./backend /app/
+
 RUN python -m pip install --upgrade pip
 COPY ./backend/config/requirements /requirements
 RUN pip install -r /requirements/production.txt

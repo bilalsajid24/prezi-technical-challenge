@@ -33,6 +33,14 @@ jobs:
       run: |
         docker push registry.heroku.com/prezi-presentations/web
 
+    - name: Set environment variables
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      run: |
+        heroku config:set DJANGO_SECRET_KEY=DJANGO_SECRET_KEY DATABASE_URL=$DATABASE_URL -a prezi-presentations
+
     - name: Release the image
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
