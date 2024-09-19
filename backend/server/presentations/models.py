@@ -14,7 +14,7 @@ class Creator(BaseModel):
 
 
 class Presentation(BaseModel):
-    title = models.CharField(max_length=100, null=False, verbose_name=_("Name"))
+    title = models.CharField(max_length=100, null=False, verbose_name=_("Name"), db_index=True)
     thumbnail = models.URLField(max_length=100, null=True, blank=True, verbose_name=_("Thumbnail"))
     creator = models.ForeignKey(Creator, on_delete=models.SET_NULL, null=True)
 
