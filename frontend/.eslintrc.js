@@ -1,0 +1,101 @@
+module.exports = {
+  root: true,
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    project: ["tsconfig.json"],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+    jest: true,
+  },
+  plugins: ["@typescript-eslint", "simple-import-sort", "testing-library", "jest-dom", "jest", "react"],
+  settings: {
+    react: {
+      version: "detect",
+    },
+    "import/resolver": {
+      typescript: {},
+      alias: [["@/*", "./*"]],
+    },
+    next: {
+      rootDir: "frontend",
+    },
+  },
+  extends: [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
+    "plugin:sonarjs/recommended",
+    "airbnb-base",
+    "plugin:security/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:testing-library/react",
+    "plugin:prettier/recommended",
+    "plugin:jest-dom/recommended",
+    "next/core-web-vitals",
+    "prettier",
+  ],
+  rules: {
+    "prettier/prettier": ["error"],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "simple-import-sort/imports": "error",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/unbound-method": "off",
+    "@typescript-eslint/no-misused-promises": ["error", { checksVoidReturn: false }],
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/require-await": "off",
+    "@typescript-eslint/await-thenable": "off",
+    "@typescript-eslint/no-unnecessary-type-assertion": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
+      },
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        devDependencies: ["**/*.test.*", "**/*.spec.*", "**/jest.setup.ts", "**/jest.config.ts", "**/testUtils.tsx"],
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off",
+    "no-shadow": "off",
+    "no-use-before-define": "off",
+    "security/detect-object-injection": "off",
+  },
+  overrides: [
+    {
+      files: ["**/*.test.*", "**.spec.*"],
+      rules: {
+        "sonarjs/no-duplicate-string": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+      },
+    },
+  ],
+  globals: {
+    jest: true,
+    JSX: "readonly",
+  },
+};

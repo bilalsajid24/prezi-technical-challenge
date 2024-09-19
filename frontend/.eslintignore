@@ -1,0 +1,4 @@
+node_modules
+dist
+out
+jest.config.js
