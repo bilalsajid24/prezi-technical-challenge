@@ -23,4 +23,6 @@ RUN chmod +x /start
 
 WORKDIR /app
 
+ENV DJANGO_SETTINGS_MODULE="config.settings.production"
+
 ENTRYPOINT ["/start"]
