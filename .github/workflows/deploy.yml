@@ -16,7 +16,7 @@ jobs:
 
       - name: Set up environment
         run: |
-          cd docker/local
+          cd backend/docker/local
           mkdir .envs
           cd .envs
           touch .server
