@@ -14,6 +14,24 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
+      - name: Set up environment
+        run: |
+          cd docker/local
+          mkdir .envs
+          cd .envs
+          touch .server
+          touch .postgres
+          
+          echo "DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }}" >> .server
+          echo "USE_DOCKER=yes" >> .server
+          echo "DJANGO_SECRET_KEY=" >> .server
+          
+          echo "POSTGRES_HOST=presentations_database" >> .postgres
+          echo "POSTGRES_PORT=5432" >> .postgres
+          echo "POSTGRES_DB=presentations" >> .postgres
+          echo "POSTGRES_USER=root" >> .postgres
+          echo "POSTGRES_PASSWORD=password" >> .postgres
+
       - name: Run tests
         run: |
           docker compose -f ./backend/docker/docker-compose-local.yml run presentations_backend pytest
