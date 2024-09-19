@@ -12,6 +12,8 @@ outfile
 *.yml-e
 prospector.txt
 
+backend/server/static/
+
 
 ## security
 .envs
