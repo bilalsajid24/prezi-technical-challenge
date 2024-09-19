@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-19 14:05+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: server/base/models.py:10
+msgid "Created At"
+msgstr ""
+
+#: server/base/models.py:11
+msgid "Updated At"
+msgstr ""
+
+#: server/presentations/management/commands/import_presentations.py:10
+msgid "Import Presentations from JSON file"
+msgstr ""
+
+#: server/presentations/management/commands/import_presentations.py:13
+msgid "The path to the JSON file to be imported"
+msgstr ""
+
+#: server/presentations/management/commands/import_presentations.py:23
+msgid "Successfully imported presentations data"
+msgstr ""
+
+#: server/presentations/models.py:8 server/presentations/models.py:17
+msgid "Name"
+msgstr ""
+
+#: server/presentations/models.py:9
+msgid "Profile URL"
+msgstr ""
+
+#: server/presentations/models.py:12
+msgid "Creator"
+msgstr ""
+
+#: server/presentations/models.py:13
+msgid "Creators"
+msgstr ""
+
+#: server/presentations/models.py:18
+msgid "Thumbnail"
+msgstr ""
+
+#: server/presentations/models.py:25
+msgid "Presentation"
+msgstr ""
+
+#: server/presentations/models.py:26
+msgid "Presentations"
+msgstr ""
