@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from server.presentations.models import Presentation, Creator
+from server.presentations.models import Creator, Presentation
 
 
 @admin.register(Presentation)

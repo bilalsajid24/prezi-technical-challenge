@@ -1,9 +1,10 @@
-from datetime import datetime
 import json
 import logging
-import requests
+from datetime import datetime
 
+import requests
 from django.core.exceptions import MultipleObjectsReturned
+
 from server.presentations.models import Creator, Presentation
 
 

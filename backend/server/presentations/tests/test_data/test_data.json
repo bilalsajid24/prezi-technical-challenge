@@ -1,0 +1,42 @@
+[
+  {
+    "id": "56f137f432fbb67217182785",
+    "title": "Test presentation 1",
+    "thumbnail": "https://picsum.photos/400/400",
+    "creator": {
+      "name": "Bilal Sajid",
+      "profileUrl": "https://picsum.photos/400/400"
+    },
+    "createdAt": "March 6, 2014"
+  },
+  {
+    "id": "56f137f4d62116d1231786ca",
+    "title": "Test presentation 2",
+    "thumbnail": "https://picsum.photos/400/400",
+    "creator": {
+      "name": "John",
+      "profileUrl": "https://picsum.photos/400/400"
+    },
+    "createdAt": "July 31, 2015"
+  },
+  {
+    "id": "56f137f46ba885ffacf4d3ff",
+    "title": "Test Presentation 3",
+    "thumbnail": "https://picsum.photos/400/400",
+    "creator": {
+      "name": "Alex",
+      "profileUrl": "https://picsum.photos/400/400"
+    },
+    "createdAt": "July 5, 2015"
+  },
+  {
+    "id": "56f137f48510226968e8c9e7",
+    "title": "Test Presentation 4",
+    "thumbnail": "https://picsum.photos/400/400",
+    "creator": {
+      "name": "Susan",
+      "profileUrl": "https://picsum.photos/400/400"
+    },
+    "createdAt": "July 11, 2015"
+  }
+]
