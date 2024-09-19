@@ -7,6 +7,7 @@ from rest_framework.schemas import get_schema_view
 
 urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
+    path("api/v1/", include("config.api_router.api_v1", namespace='v1')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

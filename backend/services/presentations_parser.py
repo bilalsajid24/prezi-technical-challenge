@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 import json
 import logging
 import requests
@@ -23,7 +23,7 @@ class PresentationsParser:
 
     @staticmethod
     def parse_date(date_string):
-        return datetime.datetime.strptime(date_string, "%B %d, %Y").date()
+        return datetime.strptime(date_string, "%B %d, %Y")
 
     @staticmethod
     def parse_creator(creator):
