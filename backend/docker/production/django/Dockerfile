@@ -12,7 +12,7 @@ RUN apt-get update -y && apt-get install -y \
     postgresql-client
 
 RUN python -m pip install --upgrade pip
-COPY ./config/requirements /requirements
+COPY ./backend/config/requirements /requirements
 RUN pip install -r /requirements/production.txt
 
 WORKDIR /app
