@@ -1,0 +1,34 @@
+name: Deploy to Heroku
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Log in to Heroku container registry
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: |
+        echo "$HEROKU_API_KEY" | docker login --username=_ --password-stdin registry.heroku.com
+
+    - name: Build Docker image
+      run: |
+        docker build -f ./backend/docker/production/django/Dockerfile -t registry.heroku.com/prezi-presentations/web .
+
+    - name: Push to Heroku
+      run: |
+        docker push registry.heroku.com/prezi-presentations/web
+
+    - name: Release the image
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: |
+        heroku container:release web -a prezi-presentations
