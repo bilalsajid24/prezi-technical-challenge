@@ -19,8 +19,4 @@ RUN pip install -r /requirements/production.txt
 
 WORKDIR /app
 
-# Expose port 8000 for Gunicorn
 EXPOSE 8000
-
-# Run the app with Gunicorn as the web server
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "config.wsgi:application"]
