@@ -21,6 +21,7 @@ jobs:
 
     - name: Build Docker image
       run: |
+        heroku stack:set container -a prezi-presentations
         docker build -f ./backend/docker/production/django/Dockerfile -t registry.heroku.com/prezi-presentations/web .
 
     - name: Push to Heroku
