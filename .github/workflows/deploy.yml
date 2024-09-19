@@ -14,13 +14,9 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Build Docker image
-        run: |
-          docker build -f ./backend/docker/local/django/Dockerfile
-
       - name: Run tests
         run: |
-          pytest
+          docker compose -f ./backend/docker/docker-compose-local.yml run presentations_backend pytest
 
   build-and-deploy-backend:
     runs-on: ubuntu-latest
