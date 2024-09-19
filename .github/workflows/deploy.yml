@@ -19,9 +19,14 @@ jobs:
       run: |
         echo "$HEROKU_API_KEY" | docker login --username=_ --password-stdin registry.heroku.com
 
-    - name: Build Docker image
+    - name: Set Heroku stack to Docker
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: |
         heroku stack:set container -a prezi-presentations
+
+    - name: Build Docker image
+      run: |
         docker build -f ./backend/docker/production/django/Dockerfile -t registry.heroku.com/prezi-presentations/web .
 
     - name: Push to Heroku
