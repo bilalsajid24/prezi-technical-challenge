@@ -15,6 +15,3 @@ prospector.txt
 
 ## security
 .envs
-
-# JSON files
-*.json
