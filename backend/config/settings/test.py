@@ -14,3 +14,5 @@ TEMPLATES[-1]["OPTIONS"]["loaders"] = [
         ],
     )
 ]
+
+REST_FRAMEWORK["PAGE_SIZE"] = 2

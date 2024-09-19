@@ -24,3 +24,4 @@ class Presentation(BaseModel):
     class Meta:
         verbose_name = _("Presentation")
         verbose_name_plural = _("Presentations")
+        ordering = ["created_at"]
