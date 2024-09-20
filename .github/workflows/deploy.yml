@@ -104,7 +104,7 @@ jobs:
 
       - name: Build and Export
         working-directory: frontend
-        run: npm run build && npm run export
+        run: npm run build
         env:
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
 
