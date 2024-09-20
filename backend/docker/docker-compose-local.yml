@@ -15,7 +15,9 @@ services:
       - local/.envs/.server
       - local/.envs/.postgres
     ports:
-      - "8989:8989"
+      - "8000:8000"
+    expose:
+      - "8000"
     command: /start
     stdin_open: true
 
