@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o $(echo $NEXT_BUILD_DIR)",
+    "build": "next build",
     "start": "next start",
     "lint": "tsc && next lint --max-warnings=0 --dir .",
     "lint:fix": "next lint --max-warnings=0 --dir . --fix",
