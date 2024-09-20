@@ -80,3 +80,38 @@ jobs:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: |
         heroku container:release web -a prezi-presentations
+
+  build-and-deploy-frontend:
+    runs-on: ubuntu-latest
+    needs: [build-and-deploy-backend]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '19'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm run test
+
+      - name: Build and Export
+        run: npm run build && npm run export
+        env:
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+
+      - name: Deploy to Netlify
+        run: |
+          curl -s -o netlify-cli.zip https://github.com/netlify/cli/releases/latest/download/netlify-cli.zip
+          unzip netlify-cli.zip
+          sudo mv netlify /usr/local/bin
+          npm install -g netlify-cli
+          netlify deploy --prod --dir=out --site=131ca954-2d1c-4c3b-8373-0da751170e99
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
