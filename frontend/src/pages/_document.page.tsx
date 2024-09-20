@@ -12,7 +12,6 @@ export default class BazarDocument extends Document<BazarDocumentProps> {
       <Html lang="en">
         <Head>
           <meta name="theme-color" content={theme.colors.teal["400"]} />
-          <link rel="shortcut icon" href="/static/favicon.ico" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
         </Head>
         <body>

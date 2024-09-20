@@ -1,11 +1,15 @@
 CURRENT_DIRECTORY := $(shell pwd)
 DOCKER_COMPOSE_FILE := $(CURRENT_DIRECTORY)/backend/docker/docker-compose-local.yml
+DOCKER_COMPOSE_FILE_FE := $(CURRENT_DIRECTORY)/frontend/docker-compose.yml
 
 build:
 	docker-compose -f $(DOCKER_COMPOSE_FILE) build
 
 start:
 	docker-compose -f $(DOCKER_COMPOSE_FILE) up
+
+start_frontend:
+	docker-compose -f $(DOCKER_COMPOSE_FILE_FE) up
 
 stop:
 	docker-compose -f $(DOCKER_COMPOSE_FILE) stop

@@ -51,7 +51,7 @@ export default function Home() {
 
       {isValidating ? (
         <VStack my="12">
-          <Spinner size="lg" color="teal.400" />
+          <Spinner size="lg" color="teal.400" data-testid="spinner" />
         </VStack>
       ) : (
         <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={6}>
