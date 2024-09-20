@@ -95,12 +95,14 @@ jobs:
           node-version: '19'
 
       - name: Install dependencies
+        working-directory: frontend
         run: npm install
 
       - name: Run tests
         run: npm run test
 
       - name: Build and Export
+        working-directory: frontend
         run: npm run build && npm run export
         env:
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
@@ -111,7 +113,7 @@ jobs:
           unzip netlify-cli.zip
           sudo mv netlify /usr/local/bin
           npm install -g netlify-cli
-          netlify deploy --prod --dir=out --site=131ca954-2d1c-4c3b-8373-0da751170e99
+          netlify deploy --prod --dir=frontend/out --site=131ca954-2d1c-4c3b-8373-0da751170e99
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
